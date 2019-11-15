@@ -1,0 +1,18 @@
+Compiling C to Portable Executable in Linux
+    sudo apt install mingw-w64
+    32-bit
+        i686-w64-mingw32-gcc -o test32.exe test.c
+    64-bit
+        x86_64-w64-mingw32-gcc -o test64.exe test.c
+
+Managing Builds with CMake
+    Specify a minimum version to use
+        cmake_minimum_required(VERSION 3.13)
+    Specify name of project
+        project(Project)
+    Bundle source files and add executable
+        file(GLOB_RECURSE SOURCES "Source/*.Extension")
+        add_executable(Executable ${SOURCES})
+    Run 'cmake'
+        If not in the directory with CMakeLists.txt, specify a relative or absolute path as an argument
+        Within the same directory, run 'make'
